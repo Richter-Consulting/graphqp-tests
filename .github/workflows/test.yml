@@ -1,0 +1,21 @@
+name: Test graphQL
+
+on:
+  pull_request:
+    types:
+      - "labeled"
+
+jobs:
+  graphQL:
+    name: Test GitHub GraphQL in actions
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get the source code
+        uses: actions/checkout@v3
+      
+      - name: Test Action
+        uses: ./.github/actions/graphql-test
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          

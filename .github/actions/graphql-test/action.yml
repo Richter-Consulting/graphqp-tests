@@ -1,0 +1,14 @@
+name: 'Test GraphQL'
+description: 'Finish PR from one of the git flow related branches into corresponding immortal branch'
+author: 'Everest Systems GmbH - Eugen Richter'
+inputs:
+  repo-token:
+    description: Repository token
+    required: true
+  trigger-label:
+    description: Label that should trigger the action
+    required: false
+    default: 'graphql: start'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
